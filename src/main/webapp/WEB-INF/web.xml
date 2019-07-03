@@ -1,0 +1,167 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://java.sun.com/xml/ns/javaee" xmlns:jsp="http://java.sun.com/xml/ns/javaee/jsp" xmlns:web="http://java.sun.com/xml/ns/javaee/web-app_2_5.xsd" xsi:schemaLocation="http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns/javaee/web-app_3_0.xsd" id="WebApp_ID" version="3.0">
+  <display-name>ServiceLogging</display-name>
+  <welcome-file-list>
+    <welcome-file>index.html</welcome-file>
+    <welcome-file>index.htm</welcome-file>
+    <welcome-file>index.jsp</welcome-file>
+    <welcome-file>default.html</welcome-file>
+    <welcome-file>default.htm</welcome-file>
+    <welcome-file>default.jsp</welcome-file>
+  </welcome-file-list>
+  <filter>
+    <filter-name>eXtremeExport</filter-name>
+    <filter-class>org.extremecomponents.table.filter.ExportFilter</filter-class>
+    <init-param>
+      <param-name>responseHeadersSetBeforeDoFilter</param-name>
+      <param-value>true</param-value>
+    </init-param>
+  </filter>
+  <filter-mapping>
+    <filter-name>eXtremeExport</filter-name>
+    <url-pattern>/*</url-pattern>
+  </filter-mapping>
+  <jsp-config>
+    <taglib>
+      <taglib-uri>/tld/extremecomponents</taglib-uri>
+      <taglib-location>/WEB-INF/tld/extremecomponents.tld</taglib-location>
+    </taglib>
+  </jsp-config>
+  <listener>
+    <listener-class>com.userPanel.schedular.SchedulerService</listener-class>
+  </listener>
+  
+  <!-- CAS filter starts -->
+
+<!-- Sign out not yet implemented -->
+ 
+    <filter>
+        <filter-name>CAS Single Sign Out Filter</filter-name>
+        <filter-class>org.jasig.cas.client.session.SingleSignOutFilter</filter-class>
+    </filter>
+
+
+   <filter>
+        <filter-name>CAS Authentication Filter</filter-name>
+        <filter-class>org.jasig.cas.client.authentication.AuthenticationFilter</filter-class>
+        <init-param>
+            <param-name>casServerLoginUrl</param-name>
+            <param-value>http://35.236.154.164:8180/cas2/login</param-value>
+        </init-param>
+        <init-param>
+            <param-name>serverName</param-name>
+            <param-value>http://35.236.154.164:8078</param-value>
+        </init-param>
+        <init-param>
+            <param-name>renew</param-name>
+            <param-value>false</param-value>
+        </init-param>
+        <init-param>
+            <param-name>gateway</param-name>
+            <param-value>false</param-value>
+        </init-param>
+    </filter>
+    
+    <filter>
+        <filter-name>CAS Validation Filter</filter-name>
+        <filter-class>org.jasig.cas.client.validation.Cas20ProxyReceivingTicketValidationFilter</filter-class>
+        <init-param>
+            <param-name>casServerUrlPrefix</param-name>
+            <param-value>http://35.236.154.164:8180/cas2/</param-value>
+        </init-param>
+        <init-param>
+           <param-name>serverName</param-name>
+            <param-value>http://35.236.154.164:8078</param-value>
+        </init-param>
+    </filter>
+    
+    <filter>
+        <filter-name>CAS HttpServletRequest Wrapper Filter</filter-name>
+        <filter-class>org.jasig.cas.client.util.HttpServletRequestWrapperFilter</filter-class>
+    </filter>
+    
+    <filter>
+        <filter-name>CAS Assertion Thread Local Filter</filter-name>
+        <filter-class>org.jasig.cas.client.util.AssertionThreadLocalFilter</filter-class>
+    </filter>
+<!-- 
+    *************************
+
+Sign out not yet implemented
+-->
+    <filter-mapping>
+        <filter-name>CAS Single Sign Out Filter</filter-name>
+        <url-pattern>/userPanel/*</url-pattern>
+    </filter-mapping> 
+
+
+    <filter-mapping>
+        <filter-name>CAS Authentication Filter</filter-name>
+        <url-pattern>/userPanel/*</url-pattern>
+    </filter-mapping>
+
+    <filter-mapping>
+        <filter-name>CAS Validation Filter</filter-name>
+        <url-pattern>/userPanel/*</url-pattern>
+    </filter-mapping>
+     
+    <filter-mapping>
+        <filter-name>CAS HttpServletRequest Wrapper Filter</filter-name>
+        <url-pattern>/userPanel/*</url-pattern>
+    </filter-mapping>
+    
+    <filter-mapping>
+        <filter-name>CAS Assertion Thread Local Filter</filter-name>
+        <url-pattern>/userPanel/*</url-pattern>
+    </filter-mapping>
+    
+    <filter-mapping>
+        <filter-name>CAS Validation Filter</filter-name>
+        <url-pattern>/proxyCallback</url-pattern>   
+    </filter-mapping> 
+    
+    <!--  *********************** -->
+
+<!-- Sign out not yet implemented -->
+
+    <listener>
+        <listener-class>org.jasig.cas.client.session.SingleSignOutHttpSessionListener</listener-class>
+    </listener>
+
+
+    <!--  *********************** -->
+
+<!-- CAS Filter ends  -->
+    <servlet>
+       <servlet-name>consumption</servlet-name>
+       <servlet-class>com.userPanel.servlet.ServiceConsumptionServlet</servlet-class>
+     </servlet>
+     <servlet-mapping>
+         <servlet-name>consumption</servlet-name>
+         <url-pattern>/consumption</url-pattern>
+     </servlet-mapping>
+      <servlet>
+       <servlet-name>userPanel</servlet-name>
+       <servlet-class>com.userPanel.servlet.ServiceDetailServlet</servlet-class>
+     </servlet>
+     <servlet-mapping>
+         <servlet-name>userPanel</servlet-name>
+         <url-pattern>/userPanel</url-pattern>
+     </servlet-mapping>
+     <servlet>
+       <servlet-name>mdmUpload</servlet-name>
+       <servlet-class>com.userPanel.servlet.UploadMDMService</servlet-class>
+     </servlet>
+     <servlet-mapping>
+         <servlet-name>mdmUpload</servlet-name>
+         <url-pattern>/mdmUploadRecords</url-pattern>
+     </servlet-mapping>
+     <servlet>
+       <servlet-name>invitecompany</servlet-name>
+       <servlet-class>com.userPanel.servlet.Invitecompany</servlet-class>
+     </servlet>
+     <servlet-mapping>
+         <servlet-name>invitecompany</servlet-name>
+         <url-pattern>/invitecompany</url-pattern>
+     </servlet-mapping>
+</web-app>

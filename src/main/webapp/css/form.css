@@ -1,0 +1,109 @@
+@charset "utf-8";
+/* CSS Document */
+* { font-family: "PT Sans", Arial, Helvetica, sans-serif}
+.form-contanier { border-radius: 10px 10px 10px 10px;}
+textarea{resize:none;}
+
+.form-wrapper > span { width:200px; display:block; margin:10px 0;} 
+.popup_box { display:none;position: absolute; left: 50%; top: 50%; transform: translate(-50%, -50%); -webkit-transform: translate(-50%, -50%); width:350px;background:#f9f9f9;z-index:100; border:1px solid #0093c7;padding:15px 15px 0;font-size:15px;border-radius:5px;
+	}
+	.scroll-box {overflow-y:auto;}
+	.popup_box table { margin:10px 0;}
+.popup_box h1 { color:#555; font-size:1.5em; margin:0 0 10px 0; padding:0; }
+
+
+a{cursor: pointer;text-decoration:none;  
+} 
+.popupBoxClose {right:8px;  
+	top:2px;  
+	position:absolute;  
+	color:#6fa5e2;  
+	font-weight:500;  	
+}
+.assign-btn { padding:0px 2px 2px 2px; background-image: -moz-linear-gradient(center top , #0088CC, #0055CC); border-radius:3px; margin:0 10px;}
+.assign-btn img {vertical-align: middle; width:16px; height:16px; }
+/*Grid Start*/
+.popupBoxClose { position:absolute;}
+.grid-table, .tableRegion{ border:1px solid #cccccc;overflow:hidden;}
+.grid-table tr td, .tableRegion tr td{font-size:12px; padding:3px 10px;height:22px;border-right:1px solid #f1f1f1;border-bottom:1px solid #f1f1f1; background-color:#ffffff;}
+.grid-table tr td, .tableRegion tr td{border-bottom:1px solid #ccc; border-right:1px dotted #e9e9e9;}
+.grid-table tr:nth-child(even) td, .tableRegion tr:nth-child(even) td{background:url(../images/grid_alternate_row.gif) 0px 0px repeat-x #edfafe;}
+.grid-table tr.group-header td, .grid-table td.group-header, .tableRegion tr.group-header td, .tableRegion td.group-header{background:url(../images/grid_group_header_row.gif) 0px 0px repeat-x #b6dce7; font-weight:normal;}
+.grid-table tr:hover td, .tableRegion tr:hover td{-webkit-transition: .7s ease-in-out; -moz-transition: .7s ease-in-out; font-weight:normal !important; background-image: none; background-color:#ccffff;}
+.grid-table tr th, .tableRegion tr td.tableHeader
+{text-align:left;font-size:13px;background:url(../images/grid_header.gif) 0px 0px repeat-x #009cd1;padding:3px 10px;height:25px;color:#fff;}
+.grid-table tr th:hover, .tableRegion tr td.tableHeader:hover, .grid-table tr:hover th, .tableRegion tr:hover td.tableHeader, .tableRegion tr:hover td.tableHeaderSort{-webkit-transition:none; -moz-transition:transition:none; background:url(../images/grid_header.gif) 0px -80px repeat-x #009cd1;  padding:3px 10px !important;}
+.pagination span{margin:6px 0px 0px 0px; float:left; color:#666666; font-size:11px;}
+.pagination ol{list-style:none; margin:5px 0px 0px 0px; padding:0px; float:right;}
+.pagination ol li{float:left; margin:0px 3px; width:23px; height:23px;}
+.pagination ol li a{background:url(../images/icon_pagination.gif) 0px 0px repeat-x; display:block; font-size:11px; height:23px; line-height:23px; width:100%; color:#fff; text-align:center; text-decoration:none; -moz-border-radius:5px; -webkit-border-radius:5px; border-radius:5px;}
+.pagination ol li:hover a{background-image:url(../images/icon_pagination_hover.gif);}
+.pagination ol li.selected a{background-image:url(../images/icon_pagination_down.gif);}
+/*button*/
+input, select, textarea{background-color:#FFFFFF; border:1px solid #cccccc; -moz-border-radius:5px; -webkit-border-radius:5px; border-radius:5px; padding:2px; font-family: 'PT Sans', sans-serif; font-size:13px;text-shadow: 0px 1px 0px #fff; outline: none; -webkit-transition: .3s ease-in-out; -moz-transition: .3s ease-in-out;}
+input:focus, select:focus, textarea:focus{border:1px solid #6699cc; border: 1px solid #fafafa; -webkit-box-shadow: 0px 0px 6px #007eff; -moz-box-shadow: 0px 0px 5px #007eff; box-shadow: 0px 0px 5px #007eff;}
+input[type="text"] { width:90%;}
+input[type="submit"], input[type="button"], input[type="reset"] {
+    -moz-border-bottom-colors: none;
+    -moz-border-left-colors: none;
+    -moz-border-right-colors: none;
+    -moz-border-top-colors: none;
+    background-color: #F5F5F5;
+    background-image: -moz-linear-gradient(center top , #FFFFFF, #E6E6E6);
+    background-repeat: repeat-x;
+    border-color: #CCCCCC #CCCCCC #B3B3B3;
+    border-image: none;
+    border-radius: 4px 4px 4px 4px;
+    border-style: solid;
+    border-width: 1px;
+    box-shadow: 0 1px 0 rgba(255, 255, 255, 0.2) inset, 0 1px 2px rgba(0, 0, 0, 0.05);
+    color: #333333;
+    cursor: pointer;
+    display: inline-block;
+    font-size: 13px;
+    line-height: 18px;
+    margin-bottom: 0;
+    padding: 4px 10px;
+    text-align: center;
+    text-decoration: none;
+    text-shadow: 0 1px 1px rgba(255, 255, 255, 0.75);
+    vertical-align: middle;
+}
+
+input[type="submit"]:hover, input[type="button"]:hover, .assign-btn:hover, .assign-btn:hover {background-color: #E6E6E6; background-position: 0 -15px;color: #333333;text-decoration: none; transition: background-position 0.1s linear 0s;
+}
+input[type="submit"]:focus, input[type="button"]:focus {outline: thin dotted #333333; outline-offset: -2px;
+}
+input.active[type="submit"], input[type="submit"]:active, input.active[type="button"], input[type="button"]:active {background-color: #E6E6E6; background-image: none;box-shadow: 0 2px 4px rgba(0, 0, 0, 0.15) inset, 0 1px 2px rgba(0, 0, 0, 0.05);outline: 0 none;
+}
+input.disabled[type="submit"], input[type="submit"][disabled], input.disabled[type="button"], input[type="button"][disabled] {
+    background-color: #E6E6E6;
+    background-image: none;
+    box-shadow: none;
+    cursor: default;
+    opacity: 0.65;
+}
+input[type="submit"], input[type="submit"]:hover, input[type="button"], input[type="button"]:hover, input[type="reset"], input[type="reset"]:hover {
+    color: #FFFFFF;
+    text-shadow: 0 -1px 0 rgba(0, 0, 0, 0.25);
+}
+input.active[type="submit"], input.active[type="button"], input.active[type="reset"],.assign-btn:hover {
+    color: rgba(255, 255, 255, 0.75);
+}
+input[type="submit"], input[type="button"], .assign-btn:hover {
+    border-color: rgba(0, 0, 0, 0.1) rgba(0, 0, 0, 0.1) rgba(0, 0, 0, 0.25);
+}
+input[type="submit"], input[type="button"], .assign-btn:hover {
+    background-color: #0074CC;
+    background-image: -moz-linear-gradient(center top , #0088CC, #0055CC);
+    background-repeat: repeat-x;
+    border-color: rgba(0, 0, 0, 0.1) rgba(0, 0, 0, 0.1) rgba(0, 0, 0, 0.25);
+}
+input[type="submit"]:hover, input[type="submit"]:active, input.active[type="submit"], input.disabled[type="submit"], input[type="submit"][disabled], input[type="button"]:hover, input[type="button"]:active, input.active[type="button"], input.disabled[type="button"], input[type="button"][disabled], .assign-btn:hover {
+    background-color: #0055CC;
+}
+input[type="submit"]:active, input.active[type="submit"], .assign-btn:hover {
+}
+input[type="submit"]:hover, input[type="submit"]:active, input.active[type="submit"], input.disabled[type="submit"], input[type="submit"][disabled], input[type="button"]:hover, input[type="button"]:active, input.active[type="button"], input.disabled[type="button"], input[type="button"][disabled], .assign-btn:hover {
+    background-color: #0055CC;
+}

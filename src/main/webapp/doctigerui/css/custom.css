@@ -1,0 +1,116 @@
+body{
+    padding-bottom: 30px;
+}
+.pt-5{
+    padding-top: 5px;
+}
+.pr-0{
+    padding-right: 0px;
+}
+.mb-15{
+    margin-bottom: 15px !important;
+}
+.p-0{
+    padding: 0px;
+}
+.m-0{
+    margin: 0px !important;
+}
+.br-b-0{
+    border-bottom:0px !important;
+}
+.bg-light{
+    background: #fff;
+}
+a{
+    color: #337ab7;
+}
+label{
+    margin-top: 5px;
+} 
+
+input[type="text"].form-control{
+    border-radius: 0px;
+}
+.logo-text{
+    width: auto;
+    position: relative;
+    left: 50%;
+    transform: translateX(-50%);
+}
+.logo-text img{
+    float: left;
+    width: 120px;
+}
+.logo-text h2{
+    float: left;
+    margin: 0px;
+}
+.heading h2{
+    font-weight: 600;
+    color: #555555;
+    margin-top: 20px;
+    font-size: 32px;
+}
+select.form-control{
+    background: #87ceeb;
+    color: #fff;
+    font-weight: 500;
+    border-radius: 0px;
+    border-color: #87ceeb;
+    box-shadow: 0 10px 20px -10px rgba(0, 0, 0, 0.5);
+}
+
+.form-control::-moz-placeholder,
+.form-group .form-control::-moz-placeholder {
+  color: #fff;
+  font-weight: 500;
+}
+.form-control:-ms-input-placeholder,
+.form-group .form-control:-ms-input-placeholder {
+  color: #fff;
+  font-weight: 500;
+}
+.form-control::-webkit-input-placeholder,
+.form-group .form-control::-webkit-input-placeholder {
+  color: #fff;
+  font-weight: 500;
+}
+
+.form-control-white::-moz-placeholder,
+textarea.form-control::-moz-placeholder,
+.form-group textarea.form-control::-moz-placeholder {
+  color: #555 !important;
+  font-weight: 500;
+}
+.form-control-white:-ms-input-placeholder,
+textarea.form-control:-ms-input-placeholder,
+.form-group textarea.form-control:-ms-input-placeholder {
+  color: #555 !important;
+  font-weight: 500;
+}
+.form-control-white::-webkit-input-placeholder,
+textarea.form-control::-webkit-input-placeholder,
+.form-group textarea.form-control::-webkit-input-placeholder {
+  color: #555 !important;
+  font-weight: 500;
+}
+
+.card.wizard-card{
+    border-radius: 0px;
+    box-shadow: 0 0px 15px 5px rgba(0, 0, 0, 0.14);
+}
+
+.wizard-body{
+    padding: 0px 30px;
+}
+table .form-group{
+    margin-bottom: 0px;
+}
+.table>thead>tr>th{
+    vertical-align: middle;
+}
+table tr,
+table tr td{
+    min-height: 50px;
+}
